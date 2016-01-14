@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Created by csastudent2015 on 1/14/16.
  */
-public class Workout {
+public abstract class Workout {
     protected String name;
     protected Date date;
     protected Boolean completed;
