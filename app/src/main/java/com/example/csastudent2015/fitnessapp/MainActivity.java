@@ -7,14 +7,12 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends ActionBarActivity {
-//a test comment
-    //new test comment
+//a test commen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
