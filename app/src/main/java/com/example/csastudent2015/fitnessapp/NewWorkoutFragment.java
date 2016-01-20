@@ -15,6 +15,11 @@ public class NewWorkoutFragment extends Fragment {
     private Button mSTButton;
     private Button mCardioButton;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+    }
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.fragment_new_workout, container, false);
 
@@ -22,5 +27,10 @@ public class NewWorkoutFragment extends Fragment {
         mSportButton = (Button)rootView.findViewById(R.id.sport_button);
         mSTButton = (Button)rootView.findViewById(R.id.st_button);
         return rootView;
+    }
+
+    @Override
+    public void onPause(){
+
     }
 }
