@@ -6,5 +6,5 @@ package com.example.csastudent2015.fitnessapp;
 public class StrengthTrainingWorkout extends Workout{
     protected double weight;
     protected int reps;
-
+    //kriiiiiiisten
 }
