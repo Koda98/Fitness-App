@@ -2,16 +2,29 @@ package com.example.csastudent2015.fitnessapp;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
 //a test comment
+public static final String TAG = "ActionBarActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button moveOn = (Button) findViewById(R.id.home_button);
+        moveOn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Log.e(TAG,"button clicked");
+            }
+        });
     }
 
     @Override

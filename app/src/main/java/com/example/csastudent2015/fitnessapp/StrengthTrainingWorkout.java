@@ -18,5 +18,5 @@ public class StrengthTrainingWorkout extends Workout{
         workouts.add(new Lift(name,startingWeight,increment));
         return true;
     }
-    //poooooooooop
+
 }
