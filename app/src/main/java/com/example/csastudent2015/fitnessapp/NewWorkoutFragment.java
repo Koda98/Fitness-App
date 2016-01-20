@@ -21,9 +21,5 @@ public class NewWorkoutFragment {
         mCardioButton = (Button)rootView.findViewById(R.id.cardio_button);
         mSportButton = (Button)rootView.findViewById(R.id.sport_button);
         mSTButton = (Button)rootView.findViewById(R.id.st_button);
-
-        CardioButtonOnClickListener cardioButtonOnClickListener = new CardioButtonOnClickListener;
-        SportButtonOnClickListener sportButtonOnClickListener = new SportButtonOnClickListener;
-        STButtonOnClickListener stButtonOnClickListener = new STButtonOnClickListener;
     }
 }
