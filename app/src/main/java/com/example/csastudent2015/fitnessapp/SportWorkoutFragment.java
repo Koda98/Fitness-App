@@ -10,12 +10,6 @@ import android.widget.TextView;
  */
 public class SportWorkoutFragment extends Fragment {
 
-        protected TextView mFirstName;
-        protected TextView mLastName;
-        protected EditText mEnterFirstName;
-        protected EditText mEnterLastName;
-
-        private Context mAppContext;
 
 
 }
