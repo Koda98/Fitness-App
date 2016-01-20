@@ -4,6 +4,9 @@
     <string name="app_name">FitnessApp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="cardio_button">Cardio</string>
+    <string name="strength_training_button">Strength Training</string>
+    <string name="sport_button">Sport</string>
 
 
 </resources>

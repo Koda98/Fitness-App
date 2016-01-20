@@ -9,4 +9,5 @@ public abstract class Workout {
     protected String name;
     protected Date date;
     protected Boolean completed;
+    protected String desc;
 }
