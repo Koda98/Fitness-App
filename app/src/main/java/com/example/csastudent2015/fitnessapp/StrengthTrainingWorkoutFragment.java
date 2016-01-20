@@ -10,8 +10,8 @@ import android.widget.TextView;
  */
 public class StrengthTrainingWorkoutFragment extends Fragment {
 
-  
-    protected EditText mEnterFirstName;
+
+    protected EditText mEnterEffort;            ;
     protected EditText mEnterLastName;
 
     private Context mAppContext;
