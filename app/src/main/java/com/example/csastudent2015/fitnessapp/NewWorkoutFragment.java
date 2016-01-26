@@ -27,6 +27,8 @@ public class NewWorkoutFragment extends Fragment {
         mSportButton = (Button)rootView.findViewById(R.id.sport_button);
         mSTButton = (Button)rootView.findViewById(R.id.st_button);
         return rootView;
+
+
     }
 
     @Override
