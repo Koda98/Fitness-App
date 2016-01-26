@@ -1,34 +1,33 @@
 package com.example.csastudent2015.fitnessapp;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 
+/**
+ * Created by csastudent2015 on 1/20/16.
+ */
+public class NewWorkoutActivity extends FragmentActivity {
+    public static final String TAG = "NewWorkoutActivity";
 
-public class MainActivity extends ActionBarActivity {
-//a test commentc
-public static final String TAG = "ActionBarActivity";
-public String value = "poo";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_new_workout);
 
-        Button moveOn = (Button) findViewById(R.id.home_button);
-        moveOn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                // Perform action on click
-                Intent myIntent = new Intent(MainActivity.this, NewWorkoutActivity.class);
-                MainActivity.this.startActivity(myIntent);
-            }
-        });
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        NewWorkoutFragment fragment = new NewWorkoutFragment();
+        fragmentTransaction.add(R.id.new_workout, fragment,TAG);
+        fragmentTransaction.commit();
     }
 
+    //todo: make oncreateView and put fragment tranasction stuff in it
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
