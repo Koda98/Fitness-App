@@ -9,26 +9,34 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Strength Training"
-        android:id="@+id/textView3"
+        android:id="@+id/strength_training"
         android:layout_gravity="center_horizontal" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/type_of_workout"
         android:text="Type of Strength Workout" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/weight_used"
         android:text="Weight Used" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
+        android:id="@+id/num_of_reps"
         android:text="Number of Reps" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/date"
+        android:text="Date" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -36,7 +44,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Rate Your Workout!"
-        android:id="@+id/textView4" />
+        android:id="@+id/rate_workout" />
 
     <RatingBar
         android:layout_width="wrap_content"
@@ -50,7 +58,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/additional_comments"
         android:text="Any additional comments?" />
 
 </LinearLayout>

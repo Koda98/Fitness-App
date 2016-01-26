@@ -16,6 +16,20 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/enter_name"
+        android:text="Name" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/enter_date"
+        android:text="Date" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/enter_time"
         android:text="Time" />
 
@@ -24,6 +38,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/enter_distance"
         android:text="Distance" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/enter_effort"
+        android:text="Effort (1-10)" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/enter_comments"
+        android:text="Additional Comments" />
 
     <TextView
         android:layout_width="wrap_content"
