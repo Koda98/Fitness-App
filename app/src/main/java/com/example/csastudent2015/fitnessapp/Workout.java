@@ -80,7 +80,7 @@ public abstract class Workout {
         json.put(JSON_NAME, mName);
         json.put(JSON_DATE, mDate);
         json.put(JSON_COMPLETED, mCompleted);
-        json.put(JSON_EFFORT, mEffort;
+        json.put(JSON_EFFORT, mEffort);
         json.put(JSON_TIME, mTime);
         return json;
     }
