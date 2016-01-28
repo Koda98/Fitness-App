@@ -18,7 +18,7 @@ public class SportWorkout extends Workout /* implements applicant data?? */ {
 
         public SportWorkout(String name, String time, Date date, String effort, String comments) {
 
-            setName(name);   // need to make these methods in Workout - setName, setTime, setDate, setEffort, setComment
+            setName(name);   // these are methods in Workout - setName, setTime, setDate, setEffort, setComment
             setTime(time);
             setDate(date);
             setEffort(effort);
@@ -26,10 +26,13 @@ public class SportWorkout extends Workout /* implements applicant data?? */ {
 
         }
 
-    /* public Sibling(JSONObject json) throws JSONException {
+    /* NAH
 
 
-    }*/
+    public Sibling(JSONObject json) throws JSONException {
+
+
+    }
 
         public SportWorkout(JSONObject json) throws JSONException {
             mName = json.getString(JSON_NAME);
@@ -38,14 +41,14 @@ public class SportWorkout extends Workout /* implements applicant data?? */ {
             mTime = json.getString(JSON_TIME);
             mTime = json.getString(JSON_TIME);
 
+}
+ */
 
 
-
-        }
 
         public String toString()
         {
-            return "Sport Workout: " + getName() + " \nfor  " + getTime() + " \non " + getDate + " \n " + ;
+            return "Sport Workout: " + getName() + " \nfor  " + getTime() + " \non " + getDate.toString() + " \nEffort level of: " + getEffort() + "\nComments: " + getComment();
         }
 
 
