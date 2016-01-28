@@ -10,6 +10,7 @@ import java.util.Date;
  */
 public class SportWorkout extends Workout /* implements applicant data?? */ {
 
+//BUT DO WE EVEN NEED ANY OF THIS REALLY???!?!?!??
 
         public SportWorkout()
         {
@@ -17,11 +18,11 @@ public class SportWorkout extends Workout /* implements applicant data?? */ {
 
         public SportWorkout(String name, String time, Date date, String effort, String comments) {
 
-            setName(name);   // need to make these methods in Workout - setName, setTime, setDate, setEffort, setComments
+            setName(name);   // need to make these methods in Workout - setName, setTime, setDate, setEffort, setComment
             setTime(time);
             setDate(date);
             setEffort(effort);
-            setComments(comments);
+            setComment(comments);
 
         }
 
