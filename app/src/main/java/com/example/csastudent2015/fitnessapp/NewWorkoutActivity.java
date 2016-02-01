@@ -29,7 +29,7 @@ public class NewWorkoutActivity extends FragmentActivity {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_user, container, false);
+        View rootView = inflater.inflate(R.layout.activity_new_workout, container, false);
 
         getActivity().setTitle("User");
 
@@ -44,7 +44,22 @@ public class NewWorkoutActivity extends FragmentActivity {
         SportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e()
+                Log.e(TAG, "sport clicked");
+
+            }
+        });
+        CardioButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "cardio clicked");
+
+            }
+        });
+        STButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "st clicked");
+
             }
         });
 
