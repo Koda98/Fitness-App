@@ -48,12 +48,12 @@ public class SportWorkout extends Workout /* implements applicant data?? */ {
 
         public String toString()
         {
-            return "Sport Workout: " + getName() + " \nfor  " + getTime() + " \non " + getDate.toString() + " \nEffort level of: " + getEffort() + "\nComments: " + getComment();
+            return "Sport Workout: " + getName() + " \nfor  " + getTime() + " \non " + /*getDate.toString() + */" \nEffort level of: " + getEffort() + "\nComments: " + getComment();
         }
 
 
 
     }
 
-}
+
 

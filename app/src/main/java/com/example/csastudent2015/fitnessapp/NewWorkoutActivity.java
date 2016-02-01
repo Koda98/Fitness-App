@@ -31,42 +31,12 @@ public class NewWorkoutActivity extends FragmentActivity {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.activity_new_workout, container, false);
 
-        getActivity().setTitle("User");
-
-
-
-
-        SportButton = (Button)rootView.findViewById(R.id.sport_button);
-        CardioButton = (Button)rootView.findViewById(R.id.cardio_button);
-        STButton = (Button)rootView.findViewById(R.id.st_button);
-
-
-        SportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "sport clicked");
-
-            }
-        });
-        CardioButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "cardio clicked");
-
-            }
-        });
-        STButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e(TAG, "st clicked");
-
-            }
-        });
-
-        //LOG THIS STUFF AND MAKE ONCLICKLISTENERS FOR ALL BUTTONS AND INFLATE FRAGS WHEN BUTTON PUSHED
+        //getActivity().setTitle("User");
 
         return rootView;
     }
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
