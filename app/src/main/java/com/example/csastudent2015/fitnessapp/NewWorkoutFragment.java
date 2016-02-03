@@ -75,6 +75,7 @@ public class NewWorkoutFragment extends Fragment {
 
     @Override
     public void onPause(){
+        super.onPause();
 
     }
 }

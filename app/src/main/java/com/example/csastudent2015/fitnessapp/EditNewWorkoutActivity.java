@@ -16,7 +16,7 @@ import android.widget.Button;
  * Created by csastudent2015 on 2/1/16.
  */
 public class EditNewWorkoutActivity extends FragmentActivity {
-    public static final String TAG = "NewWorkoutActivity";
+    public static final String TAG = "EditNewWorkoutActivity";
 
     private Button SportButton;
     private Button CardioButton;
@@ -32,13 +32,13 @@ public class EditNewWorkoutActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_workout);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_enw);
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = null;// = fm.findFragmentById(R.id.fragmentContainer);
+
+        Log.e(TAG, "you are here");
 
         if (fragment == null) {
             if (NewWorkout.SPORT == getIntent().getIntExtra("workout_name", 0)) {
