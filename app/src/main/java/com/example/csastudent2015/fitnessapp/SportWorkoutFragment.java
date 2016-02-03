@@ -18,41 +18,25 @@ import android.widget.TextView;
 public class SportWorkoutFragment extends Fragment {
     private static final String TAG = "SportWorkoutFragment";
 
-    private EditText mOldPassword;
-    private EditText mNewPassword1;
-    private EditText mNewPassword2;
-    private Button mBtn;
+    private EditText mName;
+    private EditText mTime;
+    private EditText mDate;
+    private EditText mEffort;
+    private EditText mComments;
     private Context mAppContext;
+
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_sport_workout, container, false);
 
-        getActivity().setTitle("User");
+        getActivity().setTitle("Sport Workout");
 
-/*
-        mOldPassword = (EditText)rootView.findViewById(R.id.old_password);
-        mNewPassword1 = (EditText)rootView.findViewById(R.id.new_password1);
-        mNewPassword2 = (EditText)rootView.findViewById(R.id.new_password2);
-
-        mBtn = (Button)rootView.findViewById(R.id.button_change);
-
-        mBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (change()) {
-                    Intent intent = new Intent(getActivity(), ApplicantActivity.class);
-                    intent.putExtra("password", password);
-                    Log.e(TAG, password);
-                    intent.putExtra("pass", "true");
-                    getActivity().startActivity(intent);
-                    Log.e(TAG, password);
-                } else {
-                    Log.e(TAG, "Wrong username or password");
-                    Log.e(TAG, password);
-                }
-            }
-        }); */
+        mName = (EditText)rootView.findViewById(R.id.sport_name);
+        mTime = (EditText)rootView.findViewById(R.id.sport_time);
+        mDate = (EditText)rootView.findViewById(R.id.sport_date);
+        mEffort = (EditText)rootView.findViewById(R.id.sport_effort);
+        mComments= (EditText)rootView.findViewById(R.id.sport_comments);
 
         return rootView;
     }
@@ -62,19 +46,7 @@ public class SportWorkoutFragment extends Fragment {
         mAppContext = this.getActivity();
         Log.d(TAG, "Context: " + mAppContext);
 
-        /*
-        mStorer = new UserJSONStorer(mAppContext, FILENAME);
-        try { //begin try block, this is needed in case the file specified by FILENAME does not exist
-            mUser = mStorer.load(); // get the Profile information from the file
-        } catch (Exception e) { //if the file is not found do the following
-            mUser = new User();// create a new default Profile
-            Log.e(TAG, "Error loading user: " + FILENAME, e); //log message to let us know the profile was not loaded.
-        }
 
-        if (savedInstanceState != null) {
-            mUser.setPassword(savedInstanceState.getString(KEY_PASSWORD));
-            Log.i(TAG, "The password is " + mUser.getPassword());
-        }*/
     }
 
 
