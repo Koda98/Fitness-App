@@ -16,19 +16,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/type_of_workout"
-        android:text="Type of Strength Workout" />
+        android:hint="Type of Strength Workout" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/weight_used"
-        android:text="Weight Used" />
+        android:hint="Weight Used" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/num_of_reps"
-        android:text="Number of Reps" />
+        android:hint="Number of Reps" />
 
     <EditText
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
         android:inputType="time"
         android:ems="10"
         android:id="@+id/training_time"
-        android:text="Time spent training" />
+        android:hint="Time spent training" />
 
     <EditText
         android:layout_width="match_parent"
@@ -44,7 +44,7 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/date"
-        android:text="Date" />
+        android:hint="Date" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -67,6 +67,6 @@
         android:inputType="textMultiLine"
         android:ems="10"
         android:id="@+id/additional_comments"
-        android:text="Any additional comments?" />
+        android:hint="Any additional comments?" />
 
 </LinearLayout>
