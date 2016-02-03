@@ -49,14 +49,14 @@ public class EditNewWorkoutActivity extends FragmentActivity {
                 Log.e(TAG, "created new sport frag");
             }
             else if (NewWorkout.CARDIO == getIntent().getIntExtra("workout_name", 0)) {
-                fragment = new StrengthTrainingWorkoutFragment();
+                fragment = new CardioWorkoutFragment();
                 fm.beginTransaction()
                         .add(R.id.fragmentContainer, fragment)
                         .commit();
                 Log.e(TAG, "created new cardio frag");
             }
             else if (NewWorkout.ST == getIntent().getIntExtra("workout_name", 0)) {
-                fragment = new CardioWorkoutFragment();
+                fragment = new StrengthTrainingWorkoutFragment();
                 fm.beginTransaction()
                         .add(R.id.fragmentContainer, fragment)
                         .commit();

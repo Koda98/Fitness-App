@@ -18,8 +18,19 @@
         android:text="@string/home_button"
         android:id="@+id/home_button"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/textView"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="55dp" />
+        android:layout_marginBottom="176dp"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:layout_below="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginTop="41dp"/>
 
 </RelativeLayout>
