@@ -52,7 +52,7 @@ public class NewWorkoutActivity extends FragmentActivity {
 
     }
 
-    //todo: make oncreateView and put fragment tranasction stuff in it
+    //todo: make oncreateView and put fragment transaction stuff in it
 
 
     /*@Override
