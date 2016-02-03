@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 /**
  * Created by csastudent2015 on 1/20/16.
@@ -14,12 +15,25 @@ import android.view.ViewGroup;
 public class CardioWorkoutFragment extends Fragment {
     private static final String TAG = "CardioWorkoutFragment";
 
+    private EditText mName;
+    private EditText mTime;
+    private EditText mDate;
+    private EditText mEffort;
+    private EditText mComments;
+    private EditText mDistance;
     private Context mAppContext;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView =inflater.inflate(R.layout.fragment_cardio_workout, container, false);
 
-        getActivity().setTitle("User");
+        getActivity().setTitle("Cardio Workout");
+
+        mName = (EditText)rootView.findViewById(R.id.enter_name);
+        mTime = (EditText)rootView.findViewById(R.id.enter_time);
+        mDate = (EditText)rootView.findViewById(R.id.enter_date);
+        mEffort = (EditText)rootView.findViewById(R.id.enter_effort);
+        mComments= (EditText)rootView.findViewById(R.id.enter_comments);
+        mDistance = (EditText) rootView.findViewById(R.id.enter_distance);
 
         return rootView;
     }
