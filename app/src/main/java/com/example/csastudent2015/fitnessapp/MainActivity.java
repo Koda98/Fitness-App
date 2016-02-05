@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -24,8 +25,10 @@ public class MainActivity extends ActionBarActivity {
 //a test commen
     public static final String TAG = "ActionBarActivity";
     public String value = "poo";
-    public Button moveOn;
+    public Button login;
     public Button createUser;
+    public EditText usernameField;
+    public EditText passwordField;
 
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
@@ -38,14 +41,15 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        moveOn = (Button) findViewById(R.id.home_button);
-        createUser = (Button) findViewById(R.id.create_user_button);
+        login = (Button) findViewById(R.id.home_button);
+        createUser = (Button) findViewById(R.id.create_new_user_button);
+        usernameField = (EditText) findViewById(R.id.username_field);
+        passwordField = (EditText) findViewById(R.id.password_field);
 
-        moveOn.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
-                Intent myIntent = new Intent(MainActivity.this, NewWorkoutActivity.class);
-                MainActivity.this.startActivity(myIntent);
+                scootAlong();
             }
         });
         createUser.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +57,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 new CreateNewProduct().execute();
+                scootAlong();
             }
 
         });
@@ -63,7 +68,10 @@ public class MainActivity extends ActionBarActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+    public void scootAlong(){
+        Intent myIntent = new Intent(MainActivity.this, NewWorkoutActivity.class);
+        MainActivity.this.startActivity(myIntent);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -97,11 +105,8 @@ public class MainActivity extends ActionBarActivity {
          * Creating product
          * */
         protected String doInBackground(String... args) {
-            //String name = inputName.getText().toString();
-           // String price = inputPrice.getText().toString();
-            //String description = inputDesc.getText().toString();
-            String name = "AmadorLagunas";
-            String password = "zippy";
+            String name = usernameField.getText().toString();
+            String password = passwordField.getText().toString();
 
             // Building Parameters
             List<NameValuePair> params = new ArrayList<NameValuePair>();
