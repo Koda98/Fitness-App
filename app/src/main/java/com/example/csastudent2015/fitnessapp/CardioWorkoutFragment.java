@@ -28,14 +28,14 @@ public class CardioWorkoutFragment extends Fragment {
 
         getActivity().setTitle("Cardio Workout");
 
-        /*
+
         mName = (EditText)rootView.findViewById(R.id.enter_name);
         mTime = (EditText)rootView.findViewById(R.id.enter_time);
         mDate = (EditText)rootView.findViewById(R.id.enter_date);
         mEffort = (EditText)rootView.findViewById(R.id.enter_effort);
         mComments= (EditText)rootView.findViewById(R.id.enter_comments);
         mDistance = (EditText) rootView.findViewById(R.id.enter_distance);
-        */
+
 
         return rootView;
     }
