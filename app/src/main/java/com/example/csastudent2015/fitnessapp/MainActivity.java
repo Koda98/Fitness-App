@@ -39,7 +39,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         moveOn = (Button) findViewById(R.id.home_button);
-        createUser = (Button) findViewById(R.id.create_user_button);
+        /*createUser = (Button) findViewById(R.id.create_user_button);*/
 
         moveOn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
