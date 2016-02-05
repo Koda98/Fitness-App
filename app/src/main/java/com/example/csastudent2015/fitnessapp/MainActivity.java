@@ -34,8 +34,7 @@ public class MainActivity extends ActionBarActivity {
     JSONParser jsonParser = new JSONParser();
     private static String url_create_product = "http://nevernotconfused.com/android_connect/create_user.php";
     private static final String TAG_SUCCESS = "success";
-
-
+    //just to change something
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
