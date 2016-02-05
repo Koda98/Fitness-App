@@ -1,5 +1,7 @@
 package com.example.csastudent2015.fitnessapp;
 
+import android.widget.RatingBar;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -15,6 +17,7 @@ public abstract class Workout {
     protected String mComment;
     protected String mEffort;
     protected String mTime;
+    protected RatingBar mRating;
 
     public static final String JSON_NAME = "name";
     public static final String JSON_DATE = "date";
@@ -22,6 +25,7 @@ public abstract class Workout {
     public static final String JSON_COMMENT = "comment";
     public static final String JSON_EFFORT = "effort";
     public static final String JSON_TIME = "time";
+    public static final String JSON_RATING = "rating";
 
     public static final int CARDIO = 0;
     public static final int SPORT = 1;
@@ -75,6 +79,10 @@ public abstract class Workout {
         this.mTime = mTime;
     }
 
+    public RatingBar getRating() {return mRating; }
+
+    public void setRating(RatingBar mRating) {this.mRating = mRating; }
+
     public JSONObject toJSON() throws JSONException {
         JSONObject json = new JSONObject();
         json.put(JSON_NAME, mName);
@@ -82,6 +90,7 @@ public abstract class Workout {
         json.put(JSON_COMPLETED, mCompleted);
         json.put(JSON_EFFORT, mEffort);
         json.put(JSON_TIME, mTime);
+        json.put(JSON_RATING, mRating);
         return json;
     }
 }

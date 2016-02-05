@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 /**
  * Created by csastudent2015 on 1/20/16.
@@ -22,6 +24,7 @@ public class CardioWorkoutFragment extends Fragment {
     private EditText mComments;
     private EditText mDistance;
     private Context mAppContext;
+    private RatingBar mRatingBar;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View rootView =inflater.inflate(R.layout.fragment_cardio_workout, container, false);
@@ -35,6 +38,7 @@ public class CardioWorkoutFragment extends Fragment {
         mEffort = (EditText)rootView.findViewById(R.id.enter_effort);
         mComments= (EditText)rootView.findViewById(R.id.enter_comments);
         mDistance = (EditText) rootView.findViewById(R.id.enter_distance);
+        mRatingBar = (RatingBar) rootView.findViewById(R.id.enter_rating);
 
 
         return rootView;
