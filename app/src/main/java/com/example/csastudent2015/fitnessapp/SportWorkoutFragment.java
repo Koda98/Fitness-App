@@ -1,9 +1,13 @@
 package com.example.csastudent2015.fitnessapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +16,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Date;
+
 /**
  * Created by csastudent2015 on 1/20/16.
  */
 public class SportWorkoutFragment extends Fragment {
     private static final String TAG = "SportWorkoutFragment";
+
+    //picker frag
+    private FragmentActivity myContext;
 
     private EditText mName;
     private EditText mTime;
@@ -24,6 +33,11 @@ public class SportWorkoutFragment extends Fragment {
     private EditText mEffort;
     private EditText mComments;
     private Context mAppContext;
+    private Button mTimeButton;
+    private Button mDateButton;
+    public DialogFragment datePicker = new DatePickerFragment();
+    public DialogFragment timePicker = new TimePickerFragment();
+    private String date;
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,7 +52,31 @@ public class SportWorkoutFragment extends Fragment {
         mEffort = (EditText)rootView.findViewById(R.id.sport_effort);
         mComments= (EditText)rootView.findViewById(R.id.sport_comments);
 
-        TimePickerFragment tp = new TimePickerFragment();
+        //picker frag
+        mTimeButton = (Button) rootView.findViewById(R.id.time_button);
+        mDateButton = (Button) rootView.findViewById(R.id.date_button);
+
+        mTimeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "time clicked");
+                FragmentManager fragManager = myContext.getSupportFragmentManager();
+                timePicker.show(fragManager, "timePicker");
+                }
+        });
+
+        mDateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "date clicked");
+                FragmentManager fragManager = myContext.getSupportFragmentManager();
+                datePicker.show(fragManager, "datePicker");
+            }
+        });
+
+
+
+
 
 
 
@@ -53,6 +91,15 @@ public class SportWorkoutFragment extends Fragment {
 
 
     }
+
+    //picker frag
+    public void onAttach(Activity activity) {
+        myContext=(FragmentActivity) activity;
+        super.onAttach(activity);
+    }
+
+
+
 
 
     public void onPause() {
