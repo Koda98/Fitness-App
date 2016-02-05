@@ -15,7 +15,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_button"
+        android:text="Login"
         android:id="@+id/home_button"
         android:layout_gravity="center_horizontal"
         android:layout_alignParentBottom="true"
@@ -26,11 +26,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="Name"
+        android:hint="Username"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/username_field"
+        android:layout_marginTop="47dp"
         android:layout_below="@+id/textView"
-        android:layout_alignEnd="@+id/textView"
-        android:layout_marginTop="41dp"/>
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Password"
+        android:ems="10"
+        android:id="@+id/password_field"
+        android:layout_below="@+id/username_field"
+        android:layout_alignStart="@+id/username_field"
+        android:layout_marginTop="45dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create new user"
+        android:id="@+id/create_new_user_button"
+        android:layout_marginTop="55dp"
+        android:layout_alignTop="@+id/home_button"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

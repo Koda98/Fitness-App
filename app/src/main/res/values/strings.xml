@@ -8,6 +8,8 @@
     <string name="strength_training_button">Strength Training</string>
     <string name="sport_button">Sport</string>
     <string name="home_button">Add New Workout</string>
+    <string name="pick_time">PICK TIME</string>
+
 
 
 </resources>
