@@ -38,6 +38,10 @@ public class SportWorkoutFragment extends Fragment {
         mEffort = (EditText)rootView.findViewById(R.id.sport_effort);
         mComments= (EditText)rootView.findViewById(R.id.sport_comments);
 
+        TimePickerFragment tp = new TimePickerFragment();
+
+
+
         return rootView;
     }
 
@@ -45,6 +49,7 @@ public class SportWorkoutFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mAppContext = this.getActivity();
         Log.d(TAG, "Context: " + mAppContext);
+
 
 
     }
