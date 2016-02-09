@@ -78,18 +78,20 @@ public class JSONParser {
             StringBuilder sb = new StringBuilder();
             String line = null;
             while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
+                sb.append(line + "");
             }
             is.close();
             json = sb.toString();
+            json = removeEscape(json);
+            Log.e("",json);
         } catch (Exception e) {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
 
         // try parse the string to a JSON object
         try {
-            jObj = new JSONObject();
-            jObj.put(json,json);
+            jObj = new JSONObject(json);
+            Log.e("",jObj.toString());
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
         }
@@ -97,5 +99,9 @@ public class JSONParser {
         // return JSON String
         return jObj;
 
+    }
+    public static String removeEscape(String inpit){
+        inpit = inpit.substring(10,inpit.length());
+        return inpit;
     }
 }

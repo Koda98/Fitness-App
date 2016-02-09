@@ -34,9 +34,10 @@ public class MainActivity extends ActionBarActivity {
     public EditText usernameField;
     public EditText passwordField;
 
-    private static final String TAG_DETAILS = "the deets";
+    private static final String TAG_DETAILS = "deets";
     private static final String TAG_WORKOUT_ID = "workoutid";
     private static final String TAG_NAME = "name";
+    private static final String TAG_USERNAME = "username";
 
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
@@ -181,23 +182,21 @@ public class MainActivity extends ActionBarActivity {
          * getting All products from url
          * */
         protected String doInBackground(String... args) {
-            String username = "'";
-            String password = "'";
+            String username = "'" + usernameField.getText() + "'";
+            String password = "'" + passwordField.getText() + "'";
             // Building Parameters
             List<NameValuePair> params = new ArrayList<>();
 
-            params.add(new BasicNameValuePair("username","'ALagunas98'"));
-            params.add(new BasicNameValuePair("password", "zippy"));
+            params.add(new BasicNameValuePair("username",username));
+            //params.add(new BasicNameValuePair("password", password));
             // getting JSON string from URL
             JSONObject json = jsonParser.makeHttpRequest(url_get_details, "GET", params);
-
             // Check your log cat for JSON reponse
-            Log.d("All Products: ", json.toString());
-
+            Log.e("ffff",json.toString());
             try {
                 // Checking for SUCCESS TAG
                 int success = json.getInt(TAG_SUCCESS);
-
+                Log.e("",json.get("success").toString());
                 if (success == 1) {
                     // products found
                     // Getting Array of Products
@@ -213,13 +212,13 @@ public class MainActivity extends ActionBarActivity {
 
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
-
                         // adding each child node to HashMap key => value
                         map.put(TAG_WORKOUT_ID, id);
                         map.put(TAG_NAME, name);
 
                         // adding HashList to ArrayList
                         userDetailList.add(map);
+                        Log.e("REACHED",userDetailList.get(1).toString());
                     }
                 } else {
                     Log.e(TAG, "user not found");
@@ -227,7 +226,6 @@ public class MainActivity extends ActionBarActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
             return null;
         }
 
