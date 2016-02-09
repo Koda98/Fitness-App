@@ -61,7 +61,7 @@ public class SportWorkoutFragment extends Fragment {
             public void onClick(View v) {
                 Log.e(TAG, "time clicked");
                 FragmentManager fragManager = myContext.getSupportFragmentManager();
-                timePicker.show(fragManager, "timePicker");
+                    timePicker.show(fragManager, "timePicker");
                 }
         });
 
@@ -73,9 +73,6 @@ public class SportWorkoutFragment extends Fragment {
                 datePicker.show(fragManager, "datePicker");
             }
         });
-
-
-
 
 
 
