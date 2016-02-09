@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 /**
@@ -15,13 +16,34 @@ import android.widget.TextView;
  */
 public class StrengthTrainingWorkoutFragment extends Fragment {
     private static final String TAG = "STWFragment";
+
     private Context mAppContext;
+    /*private EditText mName;
+    private EditText mWeight;
+    private EditText mNumReps;
+    private EditText mTime;
+    private EditText mDate;
+    private RatingBar mRating;
+    private String test;
+
+    private EditText mComments;*/
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState){
         View rootView = inflater.inflate(R.layout.fragment_strength_training_workout, container, false);
-        getActivity().setTitle("User");
 
+        getActivity().setTitle("User");
+/*
+        mName = (EditText)rootView.findViewById(R.id.type_of_workout);
+        mWeight = (EditText)rootView.findViewById(R.id.weight_used);
+        mNumReps= (EditText) rootView.findViewById(R.id.num_of_reps);
+        mTime = (EditText)rootView.findViewById(R.id.training_time);
+        mDate = (EditText)rootView.findViewById(R.id.date);
+        mRating = (RatingBar)rootView.findViewById(R.id.ratingBar);
+        test =  toString(mRating.getRating());
+
+        mComments= (EditText)rootView.findViewById(R.id.additional_comments);
+*/
         return rootView;
     }
 
