@@ -181,8 +181,8 @@ public class MainActivity extends ActionBarActivity {
          * getting All products from url
          * */
         protected String doInBackground(String... args) {
-            String username = "";
-            String password = "";
+            String username = "'";
+            String password = "'";
             // Building Parameters
             List<NameValuePair> params = new ArrayList<>();
 
