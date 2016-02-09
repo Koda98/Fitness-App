@@ -64,4 +64,18 @@
         android:id="@+id/enter_rating"
         android:layout_gravity="center_horizontal" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_time"
+        android:id="@+id/time_button"
+        android:onClick="showTimePickerDialog" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pick_date"
+        android:id="@+id/date_button"
+        android:onClick="showDatePickerDialog" />
+
 </LinearLayout>
