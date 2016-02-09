@@ -51,7 +51,7 @@ public class CardioWorkoutFragment extends Fragment {
         mDistance = (EditText) rootView.findViewById(R.id.enter_distance);
         mRatingBar = (RatingBar) rootView.findViewById(R.id.enter_rating);
 
-        mTimeButton = (Button) rootView.findViewById(R.id.time_button);
+       /* mTimeButton = (Button) rootView.findViewById(R.id.time_button);
         mDateButton = (Button) rootView.findViewById(R.id.date_button);
 
         mTimeButton.setOnClickListener(new View.OnClickListener() {
@@ -72,6 +72,7 @@ public class CardioWorkoutFragment extends Fragment {
             }
         });
 
+*/
 
         return rootView;
     }

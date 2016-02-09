@@ -10,13 +10,14 @@ import java.util.Date;
 /**
  * Created by csastudent2015 on 1/14/16.
  */
-public abstract class Workout {
+public class Workout {
     protected String mName;
-    protected Date mDate;
+    protected String mDate;
     protected Boolean mCompleted;
     protected String mComment;
     protected String mEffort;
     protected String mTime;
+    protected String mLength;
     protected RatingBar mRating;
 
     public static final String JSON_NAME = "name";
@@ -31,6 +32,16 @@ public abstract class Workout {
     public static final int SPORT = 1;
     public static final int STRENGTH = 2;
 
+    public Workout(String name, String date, String time, String effort, String comments, String length)
+    {
+        mName = name;
+        mDate = date;
+        mTime = time;
+        mComment = comments;
+        mEffort = effort;
+        mLength = length;
+    }
+
     public String getName() {
         return mName;
     }
@@ -39,11 +50,11 @@ public abstract class Workout {
         this.mName = mName;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return mDate;
     }
 
-    public void setDate(Date mDate) {
+    public void setDate(String mDate) {
         this.mDate = mDate;
     }
 
@@ -82,6 +93,13 @@ public abstract class Workout {
     public RatingBar getRating() {return mRating; }
 
     public void setRating(RatingBar mRating) {this.mRating = mRating; }
+
+    @Override
+    public String toString()
+    {
+        return "Workout for: " + mDate + "\n Time of Workout: " + mTime + "\n Length of Workout: " + mLength + " minutes" + "\n Name of Workout: " + mName + "\n Effort Level: " + mEffort + "\n Comments: " + mComment;
+
+    }
 
     public JSONObject toJSON() throws JSONException {
         JSONObject json = new JSONObject();
