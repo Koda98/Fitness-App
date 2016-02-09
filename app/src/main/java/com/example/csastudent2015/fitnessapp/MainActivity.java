@@ -11,13 +11,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListAdapter;
+import android.widget.SimpleAdapter;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -30,10 +34,19 @@ public class MainActivity extends ActionBarActivity {
     public EditText usernameField;
     public EditText passwordField;
 
+    private static final String TAG_DETAILS = "the deets";
+    private static final String TAG_WORKOUT_ID = "workoutid";
+    private static final String TAG_NAME = "name";
+
     private ProgressDialog pDialog;
     JSONParser jsonParser = new JSONParser();
     private static String url_create_product = "http://nevernotconfused.com/android_connect/create_user.php";
+    private static String url_get_details = "http://nevernotconfused.com/android_connect/get_user_details.php";
     private static final String TAG_SUCCESS = "success";
+
+    ArrayList<HashMap<String, String>> userDetailList;
+
+    private JSONArray userDetails = null;
     //just to change something
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +61,7 @@ public class MainActivity extends ActionBarActivity {
         login.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
+                new GetUserDetails().execute();
                 scootAlong();
             }
         });
@@ -142,6 +156,104 @@ public class MainActivity extends ActionBarActivity {
         protected void onPostExecute(String file_url) {
             // dismiss the dialog once done
             pDialog.dismiss();
+        }
+
+    }
+    /**
+     * Background Async Task to Load all product by making HTTP Request
+     * */
+    class GetUserDetails extends AsyncTask<String, String, String> {
+
+        /**
+         * Before starting background thread Show Progress Dialog
+         * */
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(MainActivity.this);
+            pDialog.setMessage("Loading products. Please wait...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+        }
+
+        /**
+         * getting All products from url
+         * */
+        protected String doInBackground(String... args) {
+            String username = "'";
+            String password = "'";
+            // Building Parameters
+            List<NameValuePair> params = new ArrayList<>();
+
+            params.add(new BasicNameValuePair("username","'ALagunas98'"));
+            params.add(new BasicNameValuePair("password", "zippy"));
+            // getting JSON string from URL
+            JSONObject json = jsonParser.makeHttpRequest(url_get_details, "GET", params);
+
+            // Check your log cat for JSON reponse
+            Log.d("All Products: ", json.toString());
+
+            try {
+                // Checking for SUCCESS TAG
+                int success = json.getInt(TAG_SUCCESS);
+
+                if (success == 1) {
+                    // products found
+                    // Getting Array of Products
+                    userDetails = json.getJSONArray(TAG_DETAILS);
+
+                    // looping through All Products
+                    for (int i = 0; i < userDetails.length(); i++) {
+                        JSONObject c = userDetails.getJSONObject(i);
+
+                        // Storing each json item in variable
+                        String id = c.getString(TAG_WORKOUT_ID);
+                        String name = c.getString(TAG_NAME);
+
+                        // creating new HashMap
+                        HashMap<String, String> map = new HashMap<String, String>();
+
+                        // adding each child node to HashMap key => value
+                        map.put(TAG_WORKOUT_ID, id);
+                        map.put(TAG_NAME, name);
+
+                        // adding HashList to ArrayList
+                        userDetailList.add(map);
+                    }
+                } else {
+                    Log.e(TAG, "user not found");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        /**
+         * After completing background task Dismiss the progress dialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog after getting all products
+            pDialog.dismiss();
+            // updating UI from Background Thread
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    /**
+                     * Updating parsed JSON data into ListView
+                     * */
+                    /*ListAdapter adapter = new SimpleAdapter(
+                            MainActivity.this, userDetailList,
+                            R.layout.list_item, new String[] { TAG_PID,
+                            TAG_NAME},
+                            new int[] { R.id.pid, R.id.name });
+                    // updating listview
+                    setListAdapter(adapter);*/
+                    Log.e(TAG,"user found");
+                }
+            });
+
         }
 
     }
