@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by csastudent2015 on 1/14/16.
  */
-public class CardioWorkout extends Workout {
+public class CardioWorkout{
 
     private String name;
     private String  time;
